@@ -1,0 +1,37 @@
+.theme-tab {    
+  width: 700px;
+  height: 600px;
+  border-radius: 10px 0px 0px 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.theme-tag {
+  margin-top: 20px;
+  display: flex;
+}
+.theme-tag-name {
+  background-color: #0092e7;
+  border-radius: 0px 3px 3px 0px;
+  transform: skewX(-20deg);
+  align-items: center;
+  padding: 8px 15px;
+  margin-left: -9px;
+  color: white;
+  text-shadow: 0.1em 0.1em #333
+}
+.theme-title {
+  margin: 30px;
+  color: white;
+}
+.theme-hash {
+  margin-top: 70%;
+  color: white;
+}
+.theme-hashTag {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+}
+.theme-contain {
+  max-width: 300px;
+}

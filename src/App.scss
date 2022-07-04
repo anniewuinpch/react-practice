@@ -1,0 +1,15 @@
+.window-border {
+  width: 1192px;
+  height: 600px;
+  display:flex;
+  border-color: #000000;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 10px 10px 10px 10px;
+  justify-content: space-between;
+  overflow: hidden;
+}
+.window-prod {
+  width: 600px;
+  height: 600px;  
+}
