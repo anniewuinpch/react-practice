@@ -23,5 +23,6 @@ module.exports = {
     'react/forbid-prop-types': ['off'],
     'react/jsx-props-no-spreading': ['off'],
     'max-len': ['off'],
+    'linebreak-style': ['off'],
   },
 };

@@ -13,7 +13,7 @@ function Theme(props) {
     if (arrhashList?.length > 0) {
       return (
         <ul className="theme-hashTag">
-          {arrhashList?.map((data) => <HashTag {...data} />)}
+          {arrhashList?.map((data) => <HashTag {...data} key={`${data?.name}-${data?.id}`} />)}
         </ul>
       );
     }

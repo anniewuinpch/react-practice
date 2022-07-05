@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Theme from './component/Theme';
-import Prod from './component/Prod';
+import ProdList from './component/ProdList';
 import Pagination from './common/Pagination';
 import fakeData from './feature';
 import './App.scss';
@@ -17,7 +17,7 @@ const App = () => {
     <div className="window-border">
       <Theme {...data} />
       <div className="window-prod">
-        <Prod arrProd={data?.arrProd} />
+        <ProdList arrProd={data?.arrProd} />
         <Pagination maximum={page} />
       </div>
     </div>

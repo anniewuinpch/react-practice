@@ -8,8 +8,8 @@ const PROD_COUNT = 6;
 
 const ProdList = (props) => {
   const { arrProd } = props;
-  const renderListItem = (prodList) => <div className="prod-list">{prodList?.map((objProd) => <ProdInfo {...objProd} key={objProd?.id} />)}</div>;
-  const renderProdList = (prodList) => arrayChunk(prodList, 3)?.map((arrProdList) => renderListItem(arrProdList));
+  const renderListItem = (prodList, index) => <div className="prod-list" key={`prod-list-${index}`}>{prodList?.map((objProd) => <ProdInfo {...objProd} key={`${objProd?.id}-${objProd?.name}`} />)}</div>;
+  const renderProdList = (prodList) => arrayChunk(prodList, 3)?.map((arrProdList, index) => renderListItem(arrProdList, index));
   return (
     <div className="prod">
       {arrayChunk(arrProd, PROD_COUNT)?.map((arrList) => renderProdList(arrList))}
