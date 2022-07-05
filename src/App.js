@@ -7,18 +7,19 @@ import './App.scss';
 
 const App = () => {
   const [data] = useState(fakeData);
-  const [page, setPage] = useState(null);
+  const [max, setMax] = useState(null);
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
-    setPage(Math.ceil(data.arrProd.length / 6));
+    setMax(Math.ceil(data.arrProd.length / 6));
   }, [data?.arrProd]);
 
   return (
     <div className="window-border">
       <Theme {...data} />
       <div className="window-prod">
-        <ProdList arrProd={data?.arrProd} />
-        <Pagination maximum={page} />
+        <ProdList arrProd={data?.arrProd} page={page} />
+        <Pagination maximum={max} current={page} atPageSelect={setPage} />
       </div>
     </div>
   );
