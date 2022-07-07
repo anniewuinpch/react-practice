@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import ProdInfo from '../../common/ProdInfo';
-import arrayChunk from '../../utils';
+import { arrayChunk } from '../../utils';
 import './index.scss';
 
 const PROD_COUNT = 6;

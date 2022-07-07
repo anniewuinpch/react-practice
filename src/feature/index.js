@@ -1,110 +1,307 @@
-const fakeData = {
-  themeName: '3C 電競年中站',
-  hashList: [
-    { id: 1, name: '曜越電競椅', href: 'https://ecshweb.pchome.com.tw/search/v3.3/?q=%E6%9B%9C%E8%B6%8A%E9%9B%BB%E7%AB%B6%E6%A4%85' },
-    { id: 2, name: '羅技滑鼠下殺9折', href: 'https://www.pchomeec.tw/sites/pchomex' },
-    { id: 2, name: 'HP電競筆電', href: 'https://www.pchomeec.tw/sites/pchomex' },
-    { id: 2, name: 'Acer主機+電競耳麥優惠組', href: 'https://www.pchomeec.tw/sites/pchomex' },
-    { id: 2, name: '2022喇叭推薦指南', href: 'https://www.pchomeec.tw/sites/pchomex' },
-  ],
-  background: '#0026fb',
-  pic: {
-    imgSrc: 'https://stickershop.line-scdn.net/stickershop/v1/sticker/198286911/iPhone/sticker@2x.png',
-    imgAlt: '喪喪喵',
-    imgHref: 'https://24h.pchome.com.tw/',
+const onlineData = [
+  {
+    Id: 1,
+    Link: { Text: '真該死', Text2: '好棒棒', Background: '#FF0000' },
+    Img: {
+      Src: 'https://fs-a.ecimg.tw/img/h24/v1/layout/onsale/20220704/20220630160437_welcome-2-B-1000x1000.jpg',
+      Text: 'test',
+    },
   },
-  arrProd: [{
-    id: 1,
-    name: 'PNY GeForce RTX 3060 12G 顯示卡(LHR)',
-    price: 12990,
-    imgSrc: '//cs-e.ecimg.tw/items/DRADJ4A900BXK4L/000001_1655431005.jpg',
-    imgAlt: 'PNY GeForce RTX 3060 12G 顯示卡(LHR)',
-    href: 'https://24h.pchome.com.tw/prod/DRADJ4-A900BXK4L',
-  }, {
-    id: 2,
-    name: 'PNY GeForce RTX 3060 12G 顯示卡(LHR)',
-    price: 12990,
-    imgSrc: '//cs-e.ecimg.tw/items/DRADJ4A900BXK4L/000001_1655431005.jpg',
-    imgAlt: 'PNY GeForce RTX 3060 12G 顯示卡(LHR)',
-    href: 'https://24h.pchome.com.tw/prod/DRADJ4-A900BXK4L',
-  }, {
-    id: 3,
-    name: 'PNY GeForce RTX 3060 12G 顯示卡(LHR)',
-    price: 12990,
-    imgSrc: '//cs-e.ecimg.tw/items/DRADJ4A900BXK4L/000001_1655431005.jpg',
-    imgAlt: 'PNY GeForce RTX 3060 12G 顯示卡(LHR)',
-    href: 'https://24h.pchome.com.tw/prod/DRADJ4-A900BXK4L',
-  }, {
-    id: 4,
-    name: 'PNY GeForce RTX 3060 12G 顯示卡(LHR)',
-    price: 12990,
-    imgSrc: '//cs-e.ecimg.tw/items/DRADJ4A900BXK4L/000001_1655431005.jpg',
-    imgAlt: 'PNY GeForce RTX 3060 12G 顯示卡(LHR)',
-    href: 'https://24h.pchome.com.tw/prod/DRADJ4-A900BXK4L',
-  }, {
-    id: 5,
-    name: 'PNY GeForce RTX 3060 12G 顯示卡(LHR)',
-    price: 12990,
-    imgSrc: '//cs-e.ecimg.tw/items/DRADJ4A900BXK4L/000001_1655431005.jpg',
-    imgAlt: 'PNY GeForce RTX 3060 12G 顯示卡(LHR)',
-    href: 'https://24h.pchome.com.tw/prod/DRADJ4-A900BXK4L',
-  }, {
-    id: 6,
-    name: 'PNY GeForce RTX 3060 12G 顯示卡(LHR)',
-    price: 15000,
-    imgSrc: '//cs-e.ecimg.tw/items/DRADJ4A900BXK4L/000001_1655431005.jpg',
-    imgAlt: 'PNY GeForce RTX 3060 12G 顯示卡(LHR)',
-    href: 'https://24h.pchome.com.tw/prod/DRADJ4-A900BXK4L',
-  }, {
-    id: 7,
-    name: 'PNY GeForce RTX 3060 12G 顯示卡(LHR)',
-    price: 15000,
-    imgSrc: '//cs-e.ecimg.tw/items/DRADJ4A900BXK4L/000001_1655431005.jpg',
-    imgAlt: 'PNY GeForce RTX 3060 12G 顯示卡(LHR)',
-    href: 'https://24h.pchome.com.tw/prod/DRADJ4-A900BXK4L',
-  }, {
-    id: 8,
-    name: 'PNY GeForce RTX 3060 12G 顯示卡(LHR)',
-    price: 15000,
-    imgSrc: '//cs-e.ecimg.tw/items/DRADJ4A900BXK4L/000001_1655431005.jpg',
-    imgAlt: 'PNY GeForce RTX 3060 12G 顯示卡(LHR)',
-    href: 'https://24h.pchome.com.tw/prod/DRADJ4-A900BXK4L',
-  }, {
-    id: 9,
-    name: 'PNY GeForce RTX 3060 12G 顯示卡(LHR)',
-    price: 15000,
-    imgSrc: '//cs-e.ecimg.tw/items/DRADJ4A900BXK4L/000001_1655431005.jpg',
-    imgAlt: 'PNY GeForce RTX 3060 12G 顯示卡(LHR)',
-    href: 'https://24h.pchome.com.tw/prod/DRADJ4-A900BXK4L',
-  }, {
-    id: 10,
-    name: 'PNY GeForce RTX 3060 12G 顯示卡(LHR)',
-    price: 15000,
-    imgSrc: '//cs-e.ecimg.tw/items/DRADJ4A900BXK4L/000001_1655431005.jpg',
-    imgAlt: 'PNY GeForce RTX 3060 12G 顯示卡(LHR)',
-    href: 'https://24h.pchome.com.tw/prod/DRADJ4-A900BXK4L',
-  }, {
-    id: 11,
-    name: 'PNY GeForce RTX 3060 12G 顯示卡(LHR)',
-    price: 15000,
-    imgSrc: '//cs-e.ecimg.tw/items/DRADJ4A900BXK4L/000001_1655431005.jpg',
-    imgAlt: 'PNY GeForce RTX 3060 12G 顯示卡(LHR)',
-    href: 'https://24h.pchome.com.tw/prod/DRADJ4-A900BXK4L',
-  }, {
-    id: 12,
-    name: 'PNY GeForce RTX 3060 12G 顯示卡(LHR)',
-    price: 15000,
-    imgSrc: '//cs-e.ecimg.tw/items/DRADJ4A900BXK4L/000001_1655431005.jpg',
-    imgAlt: 'PNY GeForce RTX 3060 12G 顯示卡(LHR)',
-    href: 'https://24h.pchome.com.tw/prod/DRADJ4-A900BXK4L',
-  }, {
-    id: 13,
-    name: 'PNY GeForce RTX 3060 12G 顯示卡(LHR)',
-    price: 50000,
-    imgSrc: '//cs-e.ecimg.tw/items/DRADJ4A900BXK4L/000001_1655431005.jpg',
-    imgAlt: 'PNY GeForce RTX 3060 12G 顯示卡(LHR)',
-    href: 'https://24h.pchome.com.tw/prod/DRADJ4-A900BXK4L',
-  }],
-};
+  {
+    Id: 2,
+    Link: { Text: 'test', Url: 'test' },
+    ExtraData: { ElementType: 'Search' },
+  },
+  {
+    Id: 3,
+    Link: { Text: '好壞壞', Url: 'https://shopping.pchome.com.tw/' },
+    ExtraData: { ElementType: 'Url' },
+  },
+  {
+    Id: 4,
+    Link: { Text: '好爛', Url: 'https://shopping.pchome.com.tw/' },
+    ExtraData: { ElementType: 'Search' },
+  },
+  {
+    Id: 5,
+    Link: { Text: '為什麼', Url: 'https://shopping.pchome.com.tw/' },
+    ExtraData: { ElementType: 'Search' },
+  },
+  {
+    Id: 6,
+    Link: { Text: '好煩', Url: 'https://shopping.pchome.com.tw/' },
+    ExtraData: { ElementType: 'Search' },
+  },
+  {
+    Id: 7,
+    Link: {
+      Text: '【日本風倍清】織物除菌消臭噴霧100ml (高效除菌)',
+      Text1: '179',
+      Url: 'DAAK90-A900AD51J',
+    },
+    Img: {
+      Src: '/items/DAAK90A900AD51J/000007_1629189763.jpg',
+    },
+    ExtraData: {
+      ElementType: 'Prod',
+      Sort: 1,
+    },
+  },
+  {
+    Id: 8,
+    Link: {
+      Text: '【日本風倍清】織物除菌消臭噴霧120ml (高效除菌)',
+      Text1: '179',
+      Url: 'DAAK90-A900AD51J',
+    },
+    Img: {
+      Src: '/items/DAAK90A900AD51J/000007_1629189763.jpg',
+    },
+    ExtraData: {
+      ElementType: 'Prod',
+      Sort: 2,
+    },
+  },
+  {
+    Id: 9,
+    Link: {
+      Text: '【日本風倍清】織物除菌消臭噴霧90ml (高效除菌)',
+      Text1: '179',
+      Url: 'DAAK90-A900AD51J',
+    },
+    Img: {
+      Src: '/items/DAAK90A900AD51J/000007_1629189763.jpg',
+    },
+    ExtraData: {
+      ElementType: 'Store',
+      Sort: 3,
+    },
+  },
+  {
+    Id: 10,
+    Link: {
+      Text: '【日本風倍清】織物除菌消臭噴霧80ml (高效除菌)',
+      Text1: '179',
+      Url: 'DAAK90-A900AD51J',
+    },
+    Img: {
+      Src: '/items/DAAK90A900AD51J/000007_1629189763.jpg',
+    },
+    ExtraData: {
+      ElementType: 'Prod',
+      Sort: 4,
+    },
+  },
+  {
+    Id: 11,
+    Link: {
+      Text: '【日本風倍清】織物除菌消臭噴霧400ml (高效除菌)',
+      Text1: '179',
+      Url: 'DAAK90-A900AD51J',
+    },
+    Img: {
+      Src: '/items/DAAK90A900AD51J/000007_1629189763.jpg',
+    },
+    ExtraData: {
+      ElementType: 'Prod',
+      Sort: 5,
+    },
+  },
+  {
+    Id: 12,
+    Link: {
+      Text: '【日本風倍清】織物除菌消臭噴霧770ml (高效除菌)',
+      Text1: '179',
+      Url: 'DAAK90-A900AD51J',
+    },
+    Img: {
+      Src: '/items/DAAK90A900AD51J/000007_1629189763.jpg',
+    },
+    ExtraData: {
+      ElementType: 'Prod',
+      Sort: 6,
+    },
+  },
+  {
+    Id: 13,
+    Link: {
+      Text: '【日本風倍清】織物除菌消臭噴霧800ml (高效除菌)',
+      Text1: '179',
+      Url: 'DAAK90-A900AD51J',
+    },
+    Img: {
+      Src: '/items/DAAK90A900AD51J/000007_1629189763.jpg',
+    },
+    ExtraData: {
+      ElementType: 'Prod',
+      Sort: 7,
+    },
+  },
+  {
+    Id: 14,
+    Link: {
+      Text: '【日本風倍清】織物除菌消臭噴霧900ml (高效除菌)',
+      Text1: '179',
+      Url: 'DAAK90-A900AD51J',
+    },
+    Img: {
+      Src: '/items/DAAK90A900AD51J/000007_1629189763.jpg',
+    },
+    ExtraData: {
+      ElementType: 'Prod',
+      Sort: 8,
+    },
+  },
+  {
+    Id: 15,
+    Link: {
+      Text: '【日本風倍清】織物除菌消臭噴霧1000ml (高效除菌)',
+      Text1: '179',
+      Url: 'DAAK90-A900AD51J',
+    },
+    Img: {
+      Src: '/items/DAAK90A900AD51J/000007_1629189763.jpg',
+    },
+    ExtraData: {
+      ElementType: 'Prod',
+      Sort: 9,
+    },
+  },
+  {
+    Id: 16,
+    Link: {
+      Text: '【日本風倍清】織物除菌消臭噴霧440ml (高效除菌)',
+      Text1: '179',
+      Url: 'DAAK90-A900AD51J',
+    },
+    Img: {
+      Src: '/items/DAAK90A900AD51J/000007_1629189763.jpg',
+    },
+    ExtraData: {
+      ElementType: 'Prod',
+      Sort: 10,
+    },
+  },
+  {
+    Id: 17,
+    Link: {
+      Text: '【日本風倍清】織物除菌消臭噴霧6880ml (高效除菌)',
+      Text1: '179',
+      Url: 'DAAK90-A900AD51J',
+    },
+    Img: {
+      Src: '/items/DAAK90A900AD51J/000007_1629189763.jpg',
+    },
+    ExtraData: {
+      ElementType: 'Prod',
+      Sort: 11,
+    },
+  },
+  {
+    Id: 18,
+    Link: {
+      Text: '【日本風倍清】織物除菌消臭噴霧9840ml (高效除菌)',
+      Text1: '179',
+      Url: 'https://www.pchomeec.tw/activity/AC29412758',
+    },
+    Img: {
+      Src: '/items/DAAK90A900AD51J/000007_1629189763.jpg',
+    },
+    ExtraData: {
+      ElementType: 'Url',
+      Sort: 12,
+    },
+  },
+  {
+    Id: 19,
+    Link: {
+      Text: '【日本風倍清】織物除菌消臭噴霧330ml (高效除菌)',
+      Text1: '179',
+      Url: 'DAAK90-A900AD51J',
+    },
+    Img: {
+      Src: '/items/DAAK90A900AD51J/000007_1629189763.jpg',
+    },
+    ExtraData: {
+      ElementType: 'Prod',
+      Sort: 13,
+    },
+  },
+  {
+    Id: 20,
+    Link: {
+      Text: '【日本風倍清】織物除菌消臭噴霧470ml (高效除菌)',
+      Text1: '179',
+      Url: 'DAAK90-A900AD51J',
+    },
+    Img: {
+      Src: '/items/DAAK90A900AD51J/000007_1629189763.jpg',
+    },
+    ExtraData: {
+      ElementType: 'Search',
+      Sort: 14,
+    },
+  },
+  {
+    Id: 21,
+    Link: {
+      Text: '【日本風倍清】織物除菌消臭噴霧380ml (高效除菌)',
+      Text1: '179',
+      Url: 'DAAK90-A900AD51J',
+    },
+    Img: {
+      Src: '/items/DAAK90A900AD51J/000007_1629189763.jpg',
+    },
+    ExtraData: {
+      ElementType: 'Prod',
+      Sort: 15,
+    },
+  },
+  {
+    Id: 22,
+    Link: {
+      Text: '【日本風倍清】織物除菌消臭噴霧300ml (高效除菌)',
+      Text1: '179',
+      Url: 'DAAK90-A900AD51J',
+    },
+    Img: {
+      Src: '/items/DAAK90A900AD51J/000007_1629189763.jpg',
+    },
+    ExtraData: {
+      ElementType: 'Store',
+      Sort: 16,
+    },
+  },
+  {
+    Id: 23,
+    Link: {
+      Text: '【日本風倍清】織物除菌消臭噴霧900ml (高效除菌)',
+      Text1: '179',
+      Url: 'DAAK90-A900AD51J',
+    },
+    Img: {
+      Src: '/items/DAAK90A900AD51J/000007_1629189763.jpg',
+    },
+    ExtraData: {
+      ElementType: 'Prod',
+      Sort: 17,
+    },
+  },
+  {
+    Id: 24,
+    Link: {
+      Text: '【日本風倍清】織物除菌消臭噴霧3900ml (高效除菌)',
+      Text1: '179',
+      Url: 'DAAK90-A900AD51J',
+    },
+    Img: {
+      Src: '/items/DAAK90A900AD51J/000007_1629189763.jpg',
+    },
+    ExtraData: {
+      ElementType: 'Store',
+      Sort: 18,
+    },
+  },
+];
 
-export default fakeData;
+export default onlineData;
